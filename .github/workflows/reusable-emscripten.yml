@@ -41,7 +41,7 @@ jobs:
         with open(os.environ["GITHUB_ENV"], "a") as f:
             f.write(f"PY_EMSDK_CACHE={emsdk_cache}\n")
     - name: "Install Node.js"
-      uses: actions/setup-node@v7.0.0
+      uses: actions/setup-node@v7.1.0
       with:
         node-version: ${{ steps.emscripten-config.outputs.node-version }}
     - name: "Cache Emscripten SDK"
@@ -52,7 +52,7 @@ jobs:
         key: emsdk-${{ steps.emscripten-config.outputs.emscripten-version }}-${{ steps.emscripten-config.outputs.deps-hash }}
         restore-keys: emsdk-${{ steps.emscripten-config.outputs.emscripten-version }}
     - name: "Install Python"
-      uses: actions/setup-python@v7.0.0
+      uses: actions/setup-python@v7.1.0
       with:
         python-version: '3.x'
     - name: "Runner image version"
