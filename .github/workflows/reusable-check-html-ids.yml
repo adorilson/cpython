@@ -43,7 +43,7 @@ jobs:
           MERGE_BASE: ${{ steps.merge-base.outputs.sha }}
         run: git worktree add /tmp/merge-base "$MERGE_BASE" --detach
       - name: 'Set up Python'
-        uses: actions/setup-python@v7.0.0
+        uses: actions/setup-python@v7.1.0
         with:
           python-version: '3'
           cache: 'pip'
@@ -55,7 +55,7 @@ jobs:
       - name: 'Collect HTML IDs'
         run: python Doc/tools/check-html-ids.py collect /tmp/merge-base/Doc/build/html -o /tmp/html-ids-base.json.gz
       - name: 'Download PR head HTML IDs'
-        uses: actions/download-artifact@v8.0.1
+        uses: actions/download-artifact@v8.0.2
         with:
           name: html-ids-head.json.gz
           path: /tmp

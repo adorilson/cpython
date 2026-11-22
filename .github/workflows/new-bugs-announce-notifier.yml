@@ -15,7 +15,7 @@ jobs:
       issues: read
     timeout-minutes: 10
     steps:
-      - uses: actions/setup-node@v7.0.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: 20
       # TODO: Replace with a committed lockfile and `npm ci`, or drop npm
